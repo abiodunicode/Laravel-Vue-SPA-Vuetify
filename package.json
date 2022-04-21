@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@mdi/font": "^5.5.55",
-        "axios": "^0.19",
+        "axios": "^0.19.2",
         "cross-env": "^7.0",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.19",
@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "vue": "^2.6.11",
+        "vue-axios": "^3.4.1",
         "vue-router": "^3.4.3",
         "vuetify": "^2.3.10"
     }

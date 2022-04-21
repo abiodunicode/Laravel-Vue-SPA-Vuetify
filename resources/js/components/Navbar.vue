@@ -1,40 +1,44 @@
 <template>
-    <v-navigation-drawer v-model="drawer" app>
-        <v-list dense>
-            <v-list-item link exact :to="{ name: 'home' }">
-                <v-list-item-action>
-                    <v-icon>mdi-home</v-icon>
-                </v-list-item-action>
-                <v-list-item-content>
-                    <v-list-item-title>Home</v-list-item-title>
-                </v-list-item-content>
-            </v-list-item>
-            <v-list-item link exact :to="{ name: 'about' }">
-                <v-list-item-action>
-                    <v-icon>mdi-information</v-icon>
-                </v-list-item-action>
-                <v-list-item-content>
-                    <v-list-item-title>About</v-list-item-title>
-                </v-list-item-content>
-            </v-list-item>
-            <v-list-item link exact :to="{ name: 'contact' }">
-                <v-list-item-action>
-                    <v-icon>mdi-email</v-icon>
-                </v-list-item-action>
-                <v-list-item-content>
-                    <v-list-item-title>Contact</v-list-item-title>
-                </v-list-item-content>
-            </v-list-item>
+         <v-list dense>
+            <v-list-item 
+          v-for="item in items"
+          :key="item.title"
+          :to="item.to"
+          link
+          
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+          
         </v-list>
-    </v-navigation-drawer>
-</template>
+
+        
+   </template>
 
 <script>
     export default {
         data() {
             return {
-                drawer: true
+                drawer: true,
+                 items: [
+          { title: 'Dashboardss', icon: 'mdi-view-dashboard', to:'/' },
+          { title: 'Dashboard', icon: 'mdi-view-dashboard', to:'/dashbaord' },
+          { title: 'Login For Detials', icon: 'mdi-lock', to:'/Registration' },
+          { title: 'Enquiries', icon: 'mdi-information-outline', to:'/Enquiries' },
+          { title: 'Shpping Invoice', icon: 'mdi-receipt', to:'/Invoice_estimate' },
+          { title: 'Payment', icon: 'mdi-cash', to:'/Payment' },
+          { title: 'Admin', icon: 'mdi-cash', to:'/Admin' },
+          { title: 'Admins', icon: 'mdi-cash', to:'/Admins' },
+          
+        ],
             }
+            
         },
     }
 </script>
